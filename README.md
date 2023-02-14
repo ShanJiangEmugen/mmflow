@@ -13,12 +13,20 @@ python demo/video_demo.py demo/demo.mp4 \
     raft_demo.mp4 --gt demo/demo_gt.mp4
 ```
 
-- on custome data/videos:
+- on custome data/videos with raft model:
 ```
 python demo/video_demo.py {video_input.mp4} \
     configs/raft/raft_8x2_100k_mixed_368x768.py \
     checkpoints/raft_8x2_100k_mixed_368x768.pth \
     {output_fn.mp4}
+```
+
+- more general:
+```
+python demo/video_demo.py {video_input}.mp4 \
+    configs/{model_class}/{model_name}.py \
+    checkpoints/{model_name}.pth \
+    results/{output_fn).mp4
 ```
 
 This algorithm takes lots of Memory in both RAM and GPU!    
